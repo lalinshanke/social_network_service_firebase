@@ -11,16 +11,25 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit {
 
   getData: any;
+  postData1: any;
 
   constructor (private  postFirebaseService: PostFirebaseService) { }
 
   ngOnInit() {
-    this.showUserListData()
+    this.showUserListData();
+    // this.postListData();
   }
 
   showUserListData(){
     this.postFirebaseService.getuserListData().subscribe(data => {
       this.getData = data;
-    })
+    });
   }
+
+  postListData(){
+    this.postFirebaseService.postUserData().subscribe(data => {
+      this.postData1 = data;
+    });
+  }
+
 }

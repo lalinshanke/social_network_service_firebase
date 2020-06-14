@@ -3,6 +3,9 @@
     <app-post-header [postHeader]="userList"></app-post-header>
     <app-post-type [postType]="userList"></app-post-type>
     <app-comment-leve1 [postComment]="userList"></app-comment-leve1>
-    <input class="postComment" placeholder="Type your comment" />
+    <!-- <input class="postComment" placeholder="Type your comment" /> -->
+    <form (keydown)="keyDownFunction($event)">
+      <input type="text" class="postComment" placeholder="Type your comment"/>
+    </form>
   </div>
 </div>
